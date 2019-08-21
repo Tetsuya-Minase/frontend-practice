@@ -1,6 +1,6 @@
-import * as React from "react";
-import {RssReaderStates} from "../../constants/RssReaderStates";
-import {RssReaderProps} from "../../constants/RssReaderProps";
+import * as React from 'react';
+import {RssReaderStates} from '../../types/RssReaderStates';
+import {RssReaderProps} from '../../types/RssReaderProps';
 
 export default (props: RssReaderProps) => {
     console.log('props: ', props);
@@ -10,7 +10,7 @@ export default (props: RssReaderProps) => {
     if (Array.isArray(props.rssList['rssReaderReducer'])) {
         return (
             <ul>
-                    {props.rssList['rssReaderReducer'].map((rss: RssReaderStates) => <li>{rss.title}</li>)}
+                {props.rssList['rssReaderReducer'].map((rss: RssReaderStates) => <li>{rss.title}</li>)}
             </ul>
         );
     }

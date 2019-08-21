@@ -1,10 +1,8 @@
 import React from 'react';
-import {fetchRss, RssActions} from "../actions/RssReaderAction";
-import {connect} from "react-redux";
-import {ThunkDispatch} from "redux-thunk";
-import {RssReaderStates} from "../constants/RssReaderStates";
-
-//export default () => (<button onClick={() => store.dispatch(fetchRss())}>更新</button>);
+import {fetchRss, RssActions} from '../actions/RssReaderAction';
+import {connect} from 'react-redux';
+import {ThunkDispatch} from 'redux-thunk';
+import {RssReaderStates} from '../types/RssReaderStates';
 
 type DispatchProps = {
     onClick: () => void;

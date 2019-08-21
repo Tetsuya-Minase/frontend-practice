@@ -5,4 +5,3 @@ export class AxiosService<T> {
         return await axios.get<any, T>(path);
     }
 }
-

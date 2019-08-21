@@ -9,7 +9,6 @@ const App: React.FC = () => {
         <FetchButton />
         <FetchRssList />
       </div>
-      //<ListComponent rssList={[{title: 'test', description: '説明', url: 'google.com'}]} />
   );
 };
 

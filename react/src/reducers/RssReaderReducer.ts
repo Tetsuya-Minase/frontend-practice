@@ -1,5 +1,6 @@
-import {RssReaderStates} from '../constants/RssReaderStates';
-import {RSS_READER_TYPES, RssActions} from "../actions/RssReaderAction";
+
+import {RssReaderStates} from '../types/RssReaderStates';
+import {RSS_READER_TYPES, RssActions} from '../actions/RssReaderAction';
 
 
 export const rssReaderReducer = (state: RssReaderStates[] | never = [], action:RssActions): RssReaderStates[] => {

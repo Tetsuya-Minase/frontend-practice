@@ -1,7 +1,7 @@
-import {Action, Dispatch} from "redux";
-import {RssReaderStates} from "../constants/RssReaderStates";
+import {Action, Dispatch} from 'redux';
+import {RssReaderStates} from '../types/RssReaderStates';
 import axios from 'axios';
-import {ThunkAction} from "redux-thunk";
+import {ThunkAction} from 'redux-thunk';
 
 export enum RSS_READER_TYPES {
     ADD = 'ADD_RSS',
@@ -47,4 +47,3 @@ export type RssActions = (
     | ReturnType<typeof fetchRssRequest>
     | ReturnType<typeof addRssList>
     );
-
