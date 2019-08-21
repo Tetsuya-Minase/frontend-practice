@@ -7,15 +7,27 @@ import {RssReaderStates} from '../types/RssReaderStates';
 type DispatchProps = {
     onClick: () => void;
 };
-const button: React.FC<DispatchProps> = (props: DispatchProps) => (
-    <button
-        onClick={() => {
-            props.onClick();
-        }}
-    >
-        更新
-    </button>
-);
+class FetchButton extends React.Component<DispatchProps> {
+    constructor(props: DispatchProps) {
+        super(props);
+    }
+
+    componentDidMount(): void {
+        this.props.onClick();
+    }
+    render() {
+        return (
+            <button
+                onClick={() => {
+                    this.props.onClick();
+                }}
+            >
+                読み込み
+            </button>
+        );
+    }
+}
+
 const mapDispatchToProps = (
     dispatch: ThunkDispatch<RssReaderStates, undefined, RssActions>
 ): DispatchProps => ({
@@ -24,4 +36,4 @@ const mapDispatchToProps = (
     },
 });
 
-export default connect(null, mapDispatchToProps)(button);
+export default connect(null, mapDispatchToProps)(FetchButton);
