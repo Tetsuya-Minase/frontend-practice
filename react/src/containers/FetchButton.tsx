@@ -8,10 +8,6 @@ type DispatchProps = {
     onClick: () => void;
 };
 class FetchButton extends React.Component<DispatchProps> {
-    constructor(props: DispatchProps) {
-        super(props);
-    }
-
     componentDidMount(): void {
         this.props.onClick();
     }
@@ -22,7 +18,7 @@ class FetchButton extends React.Component<DispatchProps> {
                     this.props.onClick();
                 }}
             >
-                読み込み
+                追加
             </button>
         );
     }
