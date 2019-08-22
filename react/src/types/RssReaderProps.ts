@@ -1,5 +1,5 @@
-import {RssReaderStates} from './RssReaderStates';
+import {RssReaderState} from './RssReaderState';
 
 export type RssReaderProps = {
-    rssList: RssReaderStates[]
+    rssList: RssReaderState[]
 }

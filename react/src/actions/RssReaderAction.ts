@@ -1,34 +1,28 @@
 import {Action, Dispatch} from 'redux';
-import {RssReaderStates} from '../types/RssReaderStates';
+import {RssReaderState} from '../types/RssReaderState';
 import axios from 'axios';
 import {ThunkAction} from 'redux-thunk';
 
 export enum RSS_READER_TYPES {
-    ADD_LIST = 'ADD_RSS_LIST',
-    FETCH = 'FETCH_RSS'
+    ADD_LIST = 'ADD_RSS_LIST'
 }
 
 interface IAddRssListAction extends Action{
     type: typeof RSS_READER_TYPES.ADD_LIST;
-    payload: RssReaderStates[]
+    payload: RssReaderState[]
 }
-const fetchRssRequest = (): Action<RSS_READER_TYPES.FETCH> => ({
-    type: RSS_READER_TYPES.FETCH
-});
 
-export const addRssList = (rssList: RssReaderStates[]): IAddRssListAction => ({
+export const addRssList = (rssList: RssReaderState[]): IAddRssListAction => ({
     type: RSS_READER_TYPES.ADD_LIST,
     payload: [...rssList]
 });
-export const fetchRss = (): ThunkAction<void, any, any, any> => {
-    return async (dispatch: Dispatch<Action>) => {
-        dispatch(fetchRssRequest());
-        const result = await axios.get<RssReaderStates[]>('http://localhost:4000/result');
+export const fetchRss = (): ThunkAction<void, any, any, IAddRssListAction> => {
+    return async (dispatch: Dispatch<IAddRssListAction>) => {
+        const result = await axios.get<RssReaderState[]>('http://localhost:4000/result');
         dispatch(addRssList(result.data));
     }
 };
 
 export type RssActions = (
-    ReturnType<typeof fetchRssRequest>
-    | ReturnType<typeof addRssList>
+    ReturnType<typeof addRssList>
     );

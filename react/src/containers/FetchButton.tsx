@@ -2,7 +2,7 @@ import React from 'react';
 import {fetchRss, RssActions} from '../actions/RssReaderAction';
 import {connect} from 'react-redux';
 import {ThunkDispatch} from 'redux-thunk';
-import {RssReaderStates} from '../types/RssReaderStates';
+import {RssReaderState} from '../types/RssReaderState';
 
 type DispatchProps = {
     onClick: () => void;
@@ -25,7 +25,7 @@ class FetchButton extends React.Component<DispatchProps> {
 }
 
 const mapDispatchToProps = (
-    dispatch: ThunkDispatch<RssReaderStates, undefined, RssActions>
+    dispatch: ThunkDispatch<RssReaderState, undefined, RssActions>
 ): DispatchProps => ({
     onClick: () => {
         dispatch(fetchRss());

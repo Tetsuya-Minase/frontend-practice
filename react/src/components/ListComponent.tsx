@@ -1,11 +1,11 @@
-import * as React from 'react';
-import {RssReaderStates} from '../types/RssReaderStates';
+import React from 'react';
+import {RssReaderState} from '../types/RssReaderState';
 import {RssReaderProps} from '../types/RssReaderProps';
 
 export default (props: RssReaderProps) => (
         <ul>
             {props.rssList['rssReaderReducer']
-                .map((rss: RssReaderStates, index: number) =>
+                .map((rss: RssReaderState, index: number) =>
                     <li key={index}>
                         <a href={rss.url} target="_blank">{rss.title}</a>: {rss.description}
                     </li>)
