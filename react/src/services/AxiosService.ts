@@ -1,4 +1,4 @@
-import axios, {AxiosResponse} from 'axios';
+import axios from 'axios';
 
 export class AxiosService<T> {
     public async get(path: string): Promise<T> {

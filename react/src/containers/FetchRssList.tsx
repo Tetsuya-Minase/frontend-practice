@@ -1,10 +1,10 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {RssReaderState} from '../types/RssReaderState';
+import { connect } from 'react-redux';
+import { RssReaderState } from '../types/RssReaderState';
 import ListComponent from '../components/ListComponent';
-import {RssReaderProps} from '../types/RssReaderProps';
+import { RssReaderProps } from '../types/RssReaderProps';
 
-const stateToProps = (state: RssReaderState[]): RssReaderProps => {
-    return {rssList: state};
+const mapStateToProps = (state: RssReaderState[]): RssReaderProps => {
+  return { rssList: state['rssReader'] };
 };
-export default connect(stateToProps)(ListComponent);
+export default connect(mapStateToProps)(ListComponent);
