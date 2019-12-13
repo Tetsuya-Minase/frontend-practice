@@ -13,9 +13,7 @@ export const addRssList = (content: RssReaderStateContent) => ({
 
 export const fetchRss = (): ThunkAction<void, any, any, Action> => (
   async (dispatch: Dispatch<Action>) => {
-    console.log('action');
     const result = await axios.get<RssReaderStateContent[]>('http://localhost:4000/result');
-    console.log('result: ', result);
     result.data.forEach(content => dispatch(addRssList(content)));
   }
 );
